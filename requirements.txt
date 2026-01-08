@@ -1,0 +1,12 @@
+pandas
+numpy
+requests
+flask 
+sqlalchemy
+matplotlib
+scikit-learn
+seaborn
+tensorflow
+beautifulsoup4
+pytest
+-e .
