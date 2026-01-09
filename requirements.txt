@@ -9,4 +9,6 @@ seaborn
 tensorflow
 beautifulsoup4
 pytest
+catboost
+xgboost
 -e .
