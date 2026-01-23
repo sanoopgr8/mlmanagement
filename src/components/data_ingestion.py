@@ -1,5 +1,9 @@
 import os
 import sys
+
+# Add the project root directory to Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
 from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
@@ -53,3 +57,14 @@ class DataIngestion:
             logging.error("Error occurred during data ingestion")
             raise CustomException(e, sys)
 
+
+if __name__ == "__main__":
+    # This block runs when you execute: python src/components/data_ingestion.py
+    logging.info("Starting Data Ingestion Pipeline")
+
+    obj = DataIngestion()
+    train_path, test_path = obj.initiate_data_ingestion()
+
+    logging.info(f"Data ingestion completed successfully")
+    logging.info(f"Training data saved at: {train_path}")
+    logging.info(f"Testing data saved at: {test_path}")
